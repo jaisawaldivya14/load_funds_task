@@ -39,9 +39,11 @@ public class LoadFundService {
     @Value("${customer.load.funds.weekly.limit.in.usd}")
     private BigDecimal weeklyLimit;
 
+    @Value("${customer.load.funds.req.max.daily.count}")
+    private int dailyCount;
+
     public List<TransactionResponse> loadFunds(String executedBy) throws IOException {
         log.info("[LoadFundService] Load funds Task is executed by  [" + executedBy + "]");
-
         final List<TransactionResponse> transactionResponse = loadFundsUtils(fileReaderService.loadFundRequests());
         writeToFile(transactionResponse);
         return transactionResponse;
@@ -65,7 +67,7 @@ public class LoadFundService {
     }
 
     private boolean isDailyTransactionCountExceeded(TransactionRequest request, List<Transaction> currentDayTransactions) {
-        if (currentDayTransactions.size() >= 3) {
+        if (currentDayTransactions.size() >= dailyCount) {
             log.error("[LoadFundService] Transaction exceeds daily limit count: [" + request.getId() + "]");
             return true;
         }
