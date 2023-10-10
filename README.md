@@ -21,6 +21,7 @@ To get started with this project, follow these steps:
   --data '{
   "executed_by": "Admin"
   }'```
+- OR you can directly run LoadFundsTaskApplication main class 
 
 ## Configuration
 You can configure the application by modifying the `application.properties` file.

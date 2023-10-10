@@ -23,6 +23,9 @@ public class LoadFundsController {
     @Autowired
     LoadFundService service;
 
+    //TODO In the interest of time the fund loads req are getting parsed from resource dir
+    // - which can be easily passed as input to this endpoint
+
     @RequestMapping(value = "/api/v1/load-funds", method = RequestMethod.POST)
     public ResponseEntity<Result> loadFunds(@RequestBody LoadFundsRequest request) throws Exception {
         final List<TransactionResponse> responseList = service.loadFunds(request.getExecutedBy());
