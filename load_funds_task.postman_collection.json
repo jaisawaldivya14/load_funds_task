@@ -1,0 +1,51 @@
+{
+	"info": {
+		"_postman_id": "9edd4bb0-0313-4899-b8c3-190658ddb081",
+		"name": "load_funds_task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18528190",
+		"_collection_link": "https://galactic-desert-97837.postman.co/workspace/Layer2Financial~9ab022b9-64ed-4e5c-89c2-3a1f125987d1/collection/18528190-9edd4bb0-0313-4899-b8c3-190658ddb081?action=share&source=collection_link&creator=18528190"
+	},
+	"item": [
+		{
+			"name": "load-funds",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"executed_by\": \"Divya Jais\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/load-funds",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"load-funds"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
