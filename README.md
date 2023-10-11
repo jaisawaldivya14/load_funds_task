@@ -14,11 +14,12 @@ To get started with this project, follow these steps:
 - Use `mvn spring-boot:run` to run the load_funds_task, or you can directly run LoadFundsTaskApplication main class 
 - Svc runs on port:8080, you can configure server.port to choose a different port
 - Use rest api to execute the task. Postman collection for the same is attached in the repo
-  ```curl --location 'http://localhost:8080/api/v1/load-funds' \
+  ```
+  curl --location 'http://localhost:8080/api/v1/load-funds' \
   --header 'Content-Type: application/json' \
   --data '{
   "executed_by": "Admin"
-  }'```
+  }'
 - Fund loads req has been read from input.txt in resources dir
 - Go to resources dir  `cd src/main/resources`
 - Run `vimdiff expected_output.txt actual_output.txt -c 'set diffopt+=iwhite'` cmd to compare the diff between expected output and actual output files
